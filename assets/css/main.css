@@ -2247,9 +2247,13 @@ input, select, textarea {
 				background-position: center center;
 			}
 
-			#main > section.one {
-				background-color: #81918E;
-				background-image: url("../../images/banner.jpg");
+						#main > section.one {
+				background-color: rgba(128, 0, 128, 0.5); /* Fallback color */
+    				background: linear-gradient(to bottom, rgba(34, 45, 60, 0.7), rgba(0, 102, 102, 0.5)),
+       				 url("../../images/banner.jpg") no-repeat center center / cover; /* Combined background */
+}
+      				background-size: cover; /* Make sure the background image covers the area */
+   			 	background-position: center; /* Center the image */
 			}
 
 			#main > section.two {

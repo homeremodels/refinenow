@@ -360,7 +360,51 @@
 				#contact-form-wrapper #submit-btn:hover {
 					background-color: #1a252f;
 				}
-			</style>
+
+		 /* Mobile responsive adjustments */
+    @media (max-width: 600px) {
+      #contact-form-wrapper #contact-container {
+        padding: 15px 15px;
+        margin: 20px auto;
+        max-width: 90vw;
+      }
+
+      #contact-form-wrapper #contact-header {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      #contact-form-wrapper .form-row {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      #contact-form-wrapper .form-left,
+      #contact-form-wrapper .form-right {
+        width: 100%;
+        gap: 12px;
+      }
+
+      #contact-form-wrapper input[type="text"],
+      #contact-form-wrapper input[type="email"],
+      #contact-form-wrapper input[type="tel"],
+      #contact-form-wrapper textarea {
+        padding: 8px 10px;
+        font-size: 14px;
+        height: 38px;
+        min-height: 38px;
+      }
+
+      #contact-form-wrapper textarea {
+        min-height: 80px;
+      }
+
+      #contact-form-wrapper #submit-btn {
+        padding: 10px 0;
+        font-size: 15px;
+      }
+    }
+  </style>
 
 			<div id="contact-container">
 				<div id="contact-header">

@@ -411,7 +411,8 @@
 							<div id="contact-header">
 								Let's Discuss Your Next Project<br />
 							</div>
-							<form id="contact-form">
+							<form id="contact-form" action="https://formsubmit.co/brhomeremodels@gmail.com"
+								method="POST">
 								<div class="form-row">
 									<div class="form-left">
 										<input type="text" name="full-name" placeholder="Name" maxlength="100"
@@ -420,7 +421,8 @@
 											autocomplete="off" />
 										<input type="tel" name="phone" placeholder="Phone" required maxlength="50"
 											autocomplete="off" />
-										<textarea name="message" placeholder="Short Description (Optional)" maxlength="300"></textarea>
+										<textarea name="message" placeholder="Short Description (Optional)"
+											maxlength="300"></textarea>
 									</div>
 									<div class="form-right">
 										<fieldset class="services">
@@ -455,6 +457,9 @@
 												Evening</label>
 										</fieldset>
 									</div>
+									<!-- Anti-spam -->
+									<input type="text" name="_honey" style="display:none">
+									<input type="hidden" name="_captcha" value="false">
 								</div>
 								<button id="submit-btn" type="submit">Send</button>
 							</form>

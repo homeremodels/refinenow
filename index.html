@@ -432,7 +432,6 @@
 					currentMonth = 'september';
 				}
 
-
 				function showMonth(direction) {
 					const months = ['july', 'august', 'september'];
 					const titles = {
@@ -452,12 +451,47 @@
 					document.getElementById('month-title').textContent = titles[currentMonth];
 				}
 
+				// New function to mark past dates as unavailable
+				function markPastDatesUnavailable(monthId) {
+					const today = new Date();
+					const monthDiv = document.getElementById(monthId);
+					if (!monthDiv) return;
+
+					const days = monthDiv.querySelectorAll('.day');
+					days.forEach(day => {
+						const dayNum = parseInt(day.textContent);
+						if (!isNaN(dayNum)) {
+							// Map monthId to month index (0-based)
+							let monthIndex;
+							switch (monthId) {
+								case 'july': monthIndex = 6; break;    // July is 6
+								case 'august': monthIndex = 7; break;  // August is 7
+								case 'september': monthIndex = 8; break; // September is 8
+								default: monthIndex = today.getMonth();
+							}
+
+							const year = today.getFullYear();
+							const dateToCheck = new Date(year, monthIndex, dayNum);
+
+							if (dateToCheck < today) {
+								day.classList.remove('available');
+								day.classList.add('unavailable');
+							}
+						}
+					});
+				}
+
 				document.addEventListener('DOMContentLoaded', () => {
+					// Show current month calendar
 					showMonth();
+
+					// Automatically mark past days unavailable in all months
+					['july', 'august', 'september'].forEach(markPastDatesUnavailable);
 				});
 			</script>
 
 		</body>
+
 
 </html>
 

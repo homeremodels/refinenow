@@ -284,12 +284,12 @@
 			<div class="calendar-container">
 				<div class="calendar-header">
 					<span class="arrow" onclick="showMonth('prev')">&#8592;</span>
-					<h2 id="month-title" style="font-size: 17px;">July 2025 Availability</h2>
+					<h2 id="month-title" style="font-size: 17px;">October 2025 Availability</h2>
 					<span class="arrow" onclick="showMonth('next')">&#8594;</span>
 				</div>
 
-				<!-- July Calendar -->
-				<div id="july" class="calendar">
+				<!-- October Calendar -->
+				<div id="october" class="calendar">
 					<div class="day weekday-header">Sun</div>
 					<div class="day weekday-header">Mon</div>
 					<div class="day weekday-header">Tue</div>
@@ -323,7 +323,7 @@
 					<div class="day unavailable">22</div>
 					<div class="day unavailable">23</div>
 					<div class="day unavailable">24</div>
-					<div class="day available">25</div>
+					<div class="day unavailable">25</div>
 					<div class="day available">26</div>
 					<div class="day available">27</div>
 					<div class="day available">28</div>
@@ -332,8 +332,8 @@
 					<div class="day available">31</div>
 				</div>
 
-				<!-- August Calendar -->
-				<div id="august" class="calendar hidden">
+				<!-- November Calendar -->
+				<div id="november" class="calendar hidden">
 					<div class="day weekday-header">Sun</div>
 					<div class="day weekday-header">Mon</div>
 					<div class="day weekday-header">Tue</div>
@@ -352,13 +352,13 @@
 					<div class="day available">4</div>
 					<div class="day available">5</div>
 					<div class="day available">6</div>
-					<div class="day unavailable">7</div>
-					<div class="day unavailable">8</div>
-					<div class="day unavailable">9</div>
-					<div class="day unavailable">10</div>
-					<div class="day unavailable">11</div>
-					<div class="day unavailable">12</div>
-					<div class="day unavailable">13</div>
+					<div class="day available">7</div>
+					<div class="day available">8</div>
+					<div class="day available">9</div>
+					<div class="day available">10</div>
+					<div class="day available">11</div>
+					<div class="day available">12</div>
+					<div class="day available">13</div>
 					<div class="day available">14</div>
 					<div class="day available">15</div>
 					<div class="day available">16</div>
@@ -376,10 +376,9 @@
 					<div class="day available">28</div>
 					<div class="day available">29</div>
 					<div class="day available">30</div>
-					<div class="day available">31</div>
-				</div>
-				<!-- September Calendar -->
-				<div id="september" class="calendar hidden">
+					</div>
+				<!-- December Calendar -->
+				<div id="december" class="calendar hidden">
 					<div class="day weekday-header">Sun</div>
 					<div class="day weekday-header">Mon</div>
 					<div class="day weekday-header">Tue</div>
@@ -418,26 +417,27 @@
 					<div class="day available">28</div>
 					<div class="day available">29</div>
 					<div class="day available">30</div>
+					<div class="day available">31</div>
 				</div>
 			</div>
 
 			<script>
-				let currentMonth = 'july';
+				let currentMonth = 'october';
 
 				// Auto-switch month on page load based on today's date
 				const today = new Date();
-				if (today.getMonth() === 7) { // August (0-based index)
-					currentMonth = 'august';
-				} else if (today.getMonth() === 8) { // September
-					currentMonth = 'september';
+				if (today.getMonth() === 9) { // October (0-based index)
+					currentMonth = 'october';
+				} else if (today.getMonth() === 10) { // November
+					currentMonth = 'november';
 				}
 
 				function showMonth(direction) {
-					const months = ['july', 'august', 'september'];
+					const months = ['october', 'november', 'december'];
 					const titles = {
-						'july': 'July 2025 Availability',
-						'august': 'August 2025 Availability',
-						'september': 'September 2025 Availability'
+						'october': 'October 2025 Availability',
+						'november': 'November 2025 Availability',
+						'december': 'December 2025 Availability'
 					};
 
 					let index = months.indexOf(currentMonth);
@@ -464,9 +464,9 @@
 							// Map monthId to month index (0-based)
 							let monthIndex;
 							switch (monthId) {
-								case 'july': monthIndex = 6; break;    // July is 6
-								case 'august': monthIndex = 7; break;  // August is 7
-								case 'september': monthIndex = 8; break; // September is 8
+								case 'october': monthIndex = 9; break;    // October is 9
+								case 'november': monthIndex = 10; break;  // November is 10
+								case 'december': monthIndex = 11; break; // December is 11
 								default: monthIndex = today.getMonth();
 							}
 
@@ -486,7 +486,7 @@
 					showMonth();
 
 					// Automatically mark past days unavailable in all months
-					['july', 'august', 'september'].forEach(markPastDatesUnavailable);
+					['october', 'november', 'december'].forEach(markPastDatesUnavailable);
 				});
 			</script>
 

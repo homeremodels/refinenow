@@ -100,7 +100,10 @@
 function createLeaf() {
   const leaf = document.createElement('div');
   leaf.classList.add('leaf');
-  leaf.textContent = '🍂'; // You can change this emoji if you want
+
+  // Randomly choose a leaf emoji
+  const leafTypes = ['🍁', '🍂', '🍃']; // maple leaf, fallen leaf, fluttering leaf
+  leaf.textContent = leafTypes[Math.floor(Math.random() * leafTypes.length)];
 
   // Random horizontal offset between -15px and 15px for piling effect
   const xOffset = (Math.random() * 30 - 15).toFixed(2) + 'px';

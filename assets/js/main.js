@@ -91,8 +91,36 @@
 
 						}
 					});
+					
 
 			});
+
+			const container = document.querySelector('.falling-effects');
+
+function createLeaf() {
+  const leaf = document.createElement('div');
+  leaf.classList.add('leaf');
+  leaf.textContent = '🍂'; // You can change this emoji if you want
+
+  // Random horizontal offset between -15px and 15px for piling effect
+  const xOffset = (Math.random() * 30 - 15).toFixed(2) + 'px';
+  leaf.style.setProperty('--x-offset', xOffset);
+
+  // Random start position from 0% to 100% inside the button width
+  leaf.style.left = Math.random() * 100 + '%';
+
+  // Random animation duration between 4 and 6 seconds for natural variation
+  leaf.style.animationDuration = (4 + Math.random() * 2).toFixed(2) + 's';
+
+  container.appendChild(leaf);
+
+  // Remove leaf after 8 seconds (enough time for falling + piling)
+  setTimeout(() => leaf.remove(), 15000);
+}
+
+// Create a new leaf every 400ms
+setInterval(createLeaf, 600);
+
 
 	// Scrolly.
 		$('.scrolly').scrolly();

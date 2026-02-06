@@ -64,14 +64,14 @@
 
 				<footer>
 					<div class="decorative-button">
-  <a href="#portfolio" class="button scrolly">
-    Endeavours
-    <div class="falling-effects"></div>
-	<script src="main.js"></script>
-  </a>
-</div>
+						<a href="#portfolio" class="button scrolly">
+							Endeavours
+							<div class="falling-effects"></div>
+							<script src="main.js"></script>
+						</a>
+					</div>
 				</footer>
-				
+
 
 			</div>
 		</section>
@@ -114,16 +114,16 @@
 							</video>
 						</article>
 					</div>
-					</div>
-					<!-- Fourth video -->
-					<div class="col-4 col-12-mobile">
-						<article class="item">
-							<video height="320" width="240" autoplay loop muted controls playsinline webkit-playsinline>
-								<source src="images/output8.webm" type="video/webm">
-							</video>
-						</article>
-					</div>
 				</div>
+				<!-- Fourth video -->
+				<div class="col-4 col-12-mobile">
+					<article class="item">
+						<video height="320" width="240" autoplay loop muted controls playsinline webkit-playsinline>
+							<source src="images/output8.webm" type="video/webm">
+						</video>
+					</article>
+				</div>
+			</div>
 		</section>
 		<section>
 			<header>
@@ -300,7 +300,7 @@
 			<div class="calendar-container">
 				<div class="calendar-header">
 					<span class="arrow" onclick="showMonth('prev')">&#8592;</span>
-					<h2 id="month-title" style="font-size: 17px;">February 2026 Availability</h2>
+					<h2 id="month-title" style="font-size: 17px;"></h2>
 					<span class="arrow" onclick="showMonth('next')">&#8594;</span>
 				</div>
 
@@ -383,7 +383,7 @@
 					<div class="day unavailable">29</div>
 					<div class="day unavailable">30</div>
 					<div class="day unavailable">31</div>
-					</div>
+				</div>
 				<!-- April Calendar -->
 				<div id="april" class="calendar hidden">
 					<div class="day weekday-header">Sun</div>
@@ -435,6 +435,8 @@
 					currentMonth = 'february';
 				} else if (today.getMonth() === 2) { // March
 					currentMonth = 'march';
+				} else if (today.getMonth() === 3) { // April
+					currentMonth = 'april';
 				}
 
 				function showMonth(direction) {
@@ -492,32 +494,32 @@
 
 					// Automatically mark past days unavailable in all months
 					['february', 'march', 'april'].forEach(markPastDatesUnavailable);
-					
+
 				});
 
-function padMonth(monthId, year, monthIndex) {
-  const cal = document.getElementById(monthId);
-  if (!cal) return;
+				function padMonth(monthId, year, monthIndex) {
+					const cal = document.getElementById(monthId);
+					if (!cal) return;
 
-  const firstDay = new Date(year, monthIndex, 1).getDay(); // 0–6 (Sun–Sat)
+					const firstDay = new Date(year, monthIndex, 1).getDay(); // 0–6 (Sun–Sat)
 
-  // Insert padding AFTER weekday headers (first 7 cells)
-  for (let i = 0; i < firstDay; i++) {
-    const pad = document.createElement('div');
-    pad.className = 'day';
-    cal.insertBefore(pad, cal.children[7]);
-  }
-}
+					// Insert padding AFTER weekday headers (first 7 cells)
+					for (let i = 0; i < firstDay; i++) {
+						const pad = document.createElement('div');
+						pad.className = 'day';
+						cal.insertBefore(pad, cal.children[7]);
+					}
+				}
 
-document.addEventListener('DOMContentLoaded', () => {
-  padMonth('february', 2026, 1);
-  padMonth('march', 2026, 2);
-  padMonth('april', 2026, 3);
-});
+				document.addEventListener('DOMContentLoaded', () => {
+					padMonth('february', 2026, 1);
+					padMonth('march', 2026, 2);
+					padMonth('april', 2026, 3);
+				});
 
-				
+
 			</script>
-			
+
 
 		</body>
 

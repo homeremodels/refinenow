@@ -348,6 +348,9 @@
 					<div class="day available">26</div>
 					<div class="day available">27</div>
 					<div class="day available">28</div>
+					<div class="day available">29</div>
+					<div class="day available">30</div>
+					<div class="day available">31</div>
 				</div>
 
 				<!-- August Calendar -->
@@ -440,9 +443,9 @@
 				const today = new Date();
 				if (today.getMonth() === 6) { // July (0-based index)
 					currentMonth = 'july';
-				} else if (today.getMonth() === 7) { // March
+				} else if (today.getMonth() === 7) { // August
 					currentMonth = 'august';
-				} else if (today.getMonth() === 8) { // April
+				} else if (today.getMonth() === 8) { // September
 					currentMonth = 'september';
 				}
 
@@ -500,7 +503,7 @@
 					showMonth();
 
 					// Automatically mark past days unavailable in all months
-					['february', 'march', 'april'].forEach(markPastDatesUnavailable);
+					['july', 'august', 'september'].forEach(markPastDatesUnavailable);
 
 				});
 
@@ -519,9 +522,9 @@
 				}
 
 				document.addEventListener('DOMContentLoaded', () => {
-					padMonth('ju;y', 2026, 1);
-					padMonth('august', 2026, 2);
-					padMonth('september', 2026, 3);
+					padMonth('july', 2026, 6);
+					padMonth('august', 2026, 7);
+					padMonth('september', 2026, 8);
 				});
 
 

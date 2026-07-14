@@ -311,8 +311,8 @@
 					<span class="arrow" onclick="showMonth('next')">&#8594;</span>
 				</div>
 
-				<!-- February Calendar -->
-				<div id="february" class="calendar">
+				<!-- July Calendar -->
+				<div id="july" class="calendar">
 					<div class="day weekday-header">Sun</div>
 					<div class="day weekday-header">Mon</div>
 					<div class="day weekday-header">Tue</div>
@@ -350,8 +350,8 @@
 					<div class="day available">28</div>
 				</div>
 
-				<!-- March Calendar -->
-				<div id="march" class="calendar hidden">
+				<!-- August Calendar -->
+				<div id="august" class="calendar hidden">
 					<div class="day weekday-header">Sun</div>
 					<div class="day weekday-header">Mon</div>
 					<div class="day weekday-header">Tue</div>
@@ -370,10 +370,10 @@
 					<div class="day available">9</div>
 					<div class="day available">10</div>
 					<div class="day available">11</div>
-					<div class="day uavailable">12</div>
-					<div class="day unavailable">13</div>
-					<div class="day unavailable">14</div>
-					<div class="day unavailable">15</div>
+					<div class="day available">12</div>
+					<div class="day available">13</div>
+					<div class="day available">14</div>
+					<div class="day available">15</div>
 					<div class="day available">16</div>
 					<div class="day available">17</div>
 					<div class="day available">18</div>
@@ -381,18 +381,18 @@
 					<div class="day available">20</div>
 					<div class="day available">21</div>
 					<div class="day available">22</div>
-					<div class="day unavailable">23</div>
+					<div class="day available">23</div>
 					<div class="day available">24</div>
-					<div class="day unavailable">25</div>
-					<div class="day unavailable">26</div>
-					<div class="day unavailable">27</div>
-					<div class="day unavailable">28</div>
-					<div class="day unavailable">29</div>
-					<div class="day unavailable">30</div>
-					<div class="day unavailable">31</div>
+					<div class="day available">25</div>
+					<div class="day available">26</div>
+					<div class="day available">27</div>
+					<div class="day available">28</div>
+					<div class="day available">29</div>
+					<div class="day available">30</div>
+					<div class="day available">31</div>
 				</div>
-				<!-- April Calendar -->
-				<div id="april" class="calendar hidden">
+				<!-- September Calendar -->
+				<div id="september" class="calendar hidden">
 					<div class="day weekday-header">Sun</div>
 					<div class="day weekday-header">Mon</div>
 					<div class="day weekday-header">Tue</div>
@@ -434,24 +434,24 @@
 			</div>
 
 			<script>
-				let currentMonth = 'february';
+				let currentMonth = 'july';
 
 				// Auto-switch month on page load based on today's date
 				const today = new Date();
-				if (today.getMonth() === 1) { // February (0-based index)
-					currentMonth = 'february';
-				} else if (today.getMonth() === 2) { // March
-					currentMonth = 'march';
-				} else if (today.getMonth() === 3) { // April
-					currentMonth = 'april';
+				if (today.getMonth() === 6) { // July (0-based index)
+					currentMonth = 'july';
+				} else if (today.getMonth() === 7) { // March
+					currentMonth = 'august';
+				} else if (today.getMonth() === 8) { // April
+					currentMonth = 'september';
 				}
 
 				function showMonth(direction) {
-					const months = ['february', 'march', 'april'];
+					const months = ['july', 'august', 'september'];
 					const titles = {
-						'february': 'February 2026 Availability',
-						'march': 'March 2026 Availability',
-						'april': 'April 2026 Availability'
+						'july': 'July 2026 Availability',
+						'august': 'August 2026 Availability',
+						'september': 'September 2026 Availability'
 					};
 
 					let index = months.indexOf(currentMonth);
@@ -478,9 +478,9 @@
 							// Map monthId to month index (0-based)
 							let monthIndex;
 							switch (monthId) {
-								case 'february': monthIndex = 1; break;    // February is 1
-								case 'march': monthIndex = 2; break;  // March is 2
-								case 'april': monthIndex = 3; break; // April is 3
+								case 'july': monthIndex = 6; break;    // July is 6
+								case 'august': monthIndex = 7; break;  // August is 7
+								case 'september': monthIndex = 8; break; // September is 8
 								default: monthIndex = today.getMonth();
 							}
 
@@ -519,9 +519,9 @@
 				}
 
 				document.addEventListener('DOMContentLoaded', () => {
-					padMonth('february', 2026, 1);
-					padMonth('march', 2026, 2);
-					padMonth('april', 2026, 3);
+					padMonth('ju;y', 2026, 1);
+					padMonth('august', 2026, 2);
+					padMonth('september', 2026, 3);
 				});
 
 
